@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/icon.png"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/script.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <title>Bitz Barbearia</title>
+</head>
+
+<body>
+    <div class="wrapperLogin">
+        <div class="boxLogin">
+            <form action="">
+                <h1>Entrar</h1>
+                <div class="usernameLogin">
+                    <input type="text" placeholder="Usuário" id="username" method="POST"/>
+                    <i class="far fa-envelope"></i>
+                </div>
+                <div class="passwordLogin">
+                    <input type="password" placeholder="Senha" id="password" method="POST"/>
+                    <i class="fas fa-lock-open"></i>
+                </div>
+            </form>
+            <button id="btnLogin" type="submit" onclick="login()">Entrar</button>
+                <div class="spinner-border text-light spinner-border-sm mr-sm-1" role="status">
+        </div>
+            <a href="register.html" class="cadastro">Cadastre-se</a>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function login() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+    }
+</script>

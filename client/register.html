@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/icon.png"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/script.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <title>Bitz Barbearia</title>
+</head>
+
+<body>
+    <div class="wrapperLogin">
+        <div class="boxLogin">
+            <form action="register.php" method="post">
+                <h1>Cadastrar-se</h1>
+                <div class="usernameLogin">
+                    <input type="text" placeholder="Usuário" id="regU" method="post"/>
+                    <i class="far fa-envelope"></i>
+                </div>
+                <div class="passwordLogin">
+                    <input type="password" placeholder="Senha" id="regP" method="post"/>
+                    <i class="fas fa-lock-open"></i>
+                </div>
+                <div class="passwordLogin">
+                    <input type="password" placeholder="Confirmar Senha" id="passC" method="post"/>
+                    <i class="fas fa-lock-open"></i>
+                </div>
+            </form>
+            <button id="btnLogin" type="submit" onclick="register()">Cadastrar</button>
+    </div>
+</body>
+</html>
