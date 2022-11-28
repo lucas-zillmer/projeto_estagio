@@ -32,6 +32,9 @@
                 </div>
                 <button id="btnLogin" type="submit">Cadastrar</button>
             </form>
+        <div>
+            <a href="login.php" class="login">Voltar para Login</a>
+        </div>
     </div>
 </body>
 </html>
@@ -53,7 +56,7 @@
         $myPDO->query($sql_query1);
 
     }catch(PDOException $e){
-        echo '<script type="text/javascript">toastr.error("'.$e->getMessage().'")</script>';;
+        echo '<script type="text/javascript">toastr.error("'.$e->getMessage().'")</script>';
     }
 
 

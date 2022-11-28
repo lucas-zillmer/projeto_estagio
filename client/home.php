@@ -9,7 +9,10 @@
 </head>
 
 <body>
-    <div class="wrapperLogin">
-        <div class="boxLogin">
-            <hr>aaa</hr>
+    <div class="wrapperHome">
+        <div class="boxHome">
+            <form class="formHome">
+                <h1 class="menu">O que você precisa?</h1>
+                <button class="btnAgendamento">Agendamento</button><button class="btnRelatorio">Relatório</button>
+            </form>
 </body>
