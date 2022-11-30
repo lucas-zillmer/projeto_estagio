@@ -32,7 +32,7 @@ if (!empty($_POST)){
         header('location:home.php');
         die();
     }else{
-        echo 'else';
+        echo 'else';    
     }
 }
 ?>

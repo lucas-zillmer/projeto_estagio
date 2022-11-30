@@ -1,27 +1,28 @@
 <?php
-    $user = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
-    $hashpassword = md5($_POST['password']);
-
-    $myPDO =new PDO ("pgsql:host=dpg-cdugpjda499837gltqg0-a.oregon-postgres.render.com;dbname=barbearia","barbearia_user","nQnDCWxE9TVlAm0rEAlwwdQlm5ZQbAdR");
-    $sql ="SELECT * FROM usuario WHERE nome LIKE '".pg_escape_string($_POST['usuario'])."' and senha LIKE '".$hashpassword."'";
-    $data =  $myPDO->query($sql_query1);
-    // if($data){ 
-    //     session_start();
-    //     $_SESSION["http://localhost/projeto_estagio/client/home.php?"]=$value;
-    // }else{   
-    //     echo '<script type="text/javascript">toastr.error("Usuário ou Senha incorretos")</script>';
-    // }
-
-    if(pg_num_rows ($data) > 0){
-        $_SESSION['username'] = $user;
-        $_SESSION['password'] = $hashpassword;
-        header('location:home.php');
+if($_SERVER['REQUEST_METHOD'] == '$_POST'){
+    session_start();
+    if (!empty($_POST)){
+        $login = $_POST['usuario'];
+        $senha = $_POST['senha'];
+        $host = "dpg-cdugpjda499837gltqg0-a.oregon-postgres.render.com";
+        $port = "5432";
+        $dbname = "barbearia";
+        $dbuser = "barbearia_user";
+        $dbpassword = "nQnDCWxE9TVlAm0rEAlwwdQlm5ZQbAdR";
+        $hashpassword = md5($senha);
+        $connection_string = "host={$host} port={$port} dbname={$dbname} user={$dbuser} password={$dbpassword}";
+        $dbconn = pg_connect($connection_string) or die ("Sem conexão com o servidor");
+        $sql = "SELECT * FROM usuario WHERE nome = '{$login}' AND senha = '{$hashpassword}'";
+        $result = pg_query($dbconn, $sql);
+        $rows = pg_fetch_row($result);
+        if($rows > 0 ){
+            $_SESSION['username'] = $login;
+            $_SESSION['password'] = $senha;
+            header('location:./client/home.php');
+            die();
+        }else{
+            echo 'else';
         }
-        else{
-        unset ($_SESSION['username']);
-        unset ($_SESSION['password']);
-        //header('location:login.php');
-        echo '<script type="text/javascript">toastr.error("Usuário ou Senha incorretos")</script>';
     }
+}
 ?>
