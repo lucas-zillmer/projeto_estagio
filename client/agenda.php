@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="icon" href="img/icon.png"/>
     <link rel="stylesheet" href="css/style.css"/>
-    <title>Bitz Barbearia</title>
+    <title>Agenda</title>
 </head>
 
 <body class="wrapperLogin">
@@ -76,7 +76,7 @@
     </table>
     <table class="boxAgendamento" >
     <tr>
-        <td class="tdAgenda"><button class="btnAgenda"><b><em>Novo Agendamento</b></em></button></td>
+        <td class="tdAgenda"><button class="btnAgenda"><a href="agendamento.php"><b><em>Novo Agendamento</b></em></a></button></td>
     </tr>
     <tr>
         <td class="tdAgenda"><button class="btnAgenda"><b><em>Cancelar Agendamento</b></em></button></td>

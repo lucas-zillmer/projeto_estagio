@@ -239,19 +239,19 @@ button a{
 table {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     /* border-collapse:collapse; */
-    border-radius: 5ch;
+    border-radius: 20px;
     width: 100%;
 }
 th{
     font-size: 19px;
-    border-radius: 5ch;
+    border-radius: 20px;
     text-align: center;
     padding: 8px;
 }
 
 td{
 border: 1px solid;
-border-radius: 5ch;
+border-radius: 20px;
 border-color: green;
 text-align: left;
 padding: 8px;
@@ -259,7 +259,7 @@ padding: 8px;
 
 tr{
 background-color: green;
-border-radius: 5ch;
+border-radius: 20px;
 text-align: left;
 }
 
@@ -270,13 +270,13 @@ text-align: left;
     border: 1px solid green;
     font-size: 18px;
     color: rgb(256,256,256);
-    border-radius: 5ch;
+    border-radius: 20px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .tdAgenda{
     background-color: green;
-    border-radius: 5ch;
+    border-radius: 20px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0;
 }
@@ -291,4 +291,38 @@ text-align: left;
     display: flex;
     flex-direction: column;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#data,
+#hora{
+    border: 1px solid #4d4d4def;
+    border-radius: 20px;
+    background-color: #4d4d4def;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    opacity: 65%;
+    font-size: 15px;
+}
+
+#funcionario{
+    border: 1px solid #4d4d4def;
+    border-radius: 20px;
+    background-color: #4d4d4def;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    opacity: 65%;
+    font-size: 15px;
+    width: 250px;
+    height: 55px;
+    margin-left: 27px;
+    margin-top: 20px;
+}
+
+.agenda{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: center;
+    color: white;
+    margin-left: 27%;
 }
