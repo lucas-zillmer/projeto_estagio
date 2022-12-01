@@ -42,11 +42,11 @@ if (!empty($_POST)){
             <form method="post" action="login.php">
                 <h1>Entrar</h1>
                 <div class="usernameLogin">
-                    <input type="text" placeholder="Usuário" name="usuario" id="usuario"/>
+                    <input type="text" placeholder="Usuário" name="usuario" id="usuario" required/>
                     <i class="far fa-envelope"></i>
                 </div>
                 <div class="passwordLogin">
-                    <input type="password" placeholder="Senha" name="senha" id="senha"/>
+                    <input type="password" placeholder="Senha" name="senha" id="senha" required/>
                     <i class="fas fa-lock-open"></i>
                 </div>
                 <button id="btnLogin" type="submit">Entrar</button>

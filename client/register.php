@@ -18,15 +18,15 @@
                 
                 <h1>Cadastrar-se</h1>
                 <div class="usernameLogin">
-                    <input type="text" placeholder="Usuário" id="regUser" name="regUser"/>
+                    <input type="text" placeholder="Usuário" id="regUser" name="regUser" required/>
                     <i class="far fa-envelope"></i>
                 </div>
                 <div class="passwordLogin">
-                    <input type="password" placeholder="Senha" id="regPass" name="regPass"/>
+                    <input type="password" placeholder="Senha" id="regPass" name="regPass" required/>
                     <i class="fas fa-lock-open"></i>
                 </div>
                 <div class="passwordLogin">
-                    <input type="password" placeholder="Confirmar Senha" id="passConf" name="passConf"/>
+                    <input type="password" placeholder="Confirmar Senha" id="passConf" name="passConf" required/>
                     <i class="fas fa-lock-open"></i>
                     <p><?= $errorMsg ?></p>
                 </div>
