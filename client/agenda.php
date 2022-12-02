@@ -1,3 +1,56 @@
+<?php
+    $myPDO =new PDO ("pgsql:host=dpg-cdugpjda499837gltqg0-a.oregon-postgres.render.com;dbname=barbearia","barbearia_user","nQnDCWxE9TVlAm0rEAlwwdQlm5ZQbAdR");
+    $sql_query1 ="SELECT a.cliente, a.dia, a.hora, f.nome FROM agendamento a
+                  INNER JOIN usuario f ON a.funcionario_id = f.id 
+                  where a.dia = current_date::date";
+    $agendamentos = $myPDO->query($sql_query1);
+    $rows = $agendamentos->fetchAll();
+    $options = '';
+    
+    foreach ($rows as $row) {
+        $options .=  $row[2];
+        $cliente .= $row[0];
+        $funcionario .= $row[3];
+        if($options == '10:00:00'){
+            $clienteH1 .= $cliente;
+            $funcionarioH1 .= $funcionario;
+        }elseif($options == '10:30:00'){
+            $clienteH2 .= $cliente;
+            $funcionarioH2 .= $funcionario;
+        }elseif($options == '11:00:00'){
+            $clienteH3 .= $cliente;
+            $funcionarioH3 .= $funcionario;
+        }elseif($options == '11:30:00'){
+            $clienteH4 .= $cliente;
+            $funcionarioH4 .= $funcionario;
+        }elseif($options == '13:30:00'){
+            $clienteH5 .= $cliente;
+            $funcionarioH5 .= $funcionario;
+        }elseif($options == '14:00:00'){
+            $clienteH6 .= $cliente;
+            $funcionarioH6 .= $funcionario;
+        }elseif($options == '14:30:00'){
+            $clienteH7 .= $cliente;
+            $funcionarioH7 .= $funcionario;
+        }elseif($options == '15:00:00'){
+            $clienteH8 .= $cliente;
+            $funcionarioH8 .= $funcionario;
+        }elseif($options == '15:30:00'){
+            $clienteH9 .= $cliente;
+            $funcionarioH9 .= $funcionario;
+        }elseif($options == '16:00:00'){
+            $clienteH10 .= $cliente;
+            $funcionarioH10 .= $funcionario;
+        }elseif($options == '16:30:00'){
+            $clienteH11 .= $cliente;
+            $funcionarioH11 .= $funcionario;
+        }elseif($options == '17:00:00'){
+            $clienteH12 .= $cliente;
+            $funcionarioH12 .= $funcionario;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,64 +67,64 @@
         <th>Hora</th>
         <th>Funcionário</th>
         <tr>
-            <td><?$clienteH1?></td>
+            <td><?php echo $clienteH1; ?></td>
             <td>10:00</td>
-            <td><?$funcionario?></td>
+            <td><?php echo $funcionarioH1; ?></td>
         </tr>
         <tr>
-            <td><?$clienteH2?></td>
+            <td><?php echo $clienteH2; ?></td>
             <td>10:30</td>
-            <td><?$funcionario?></td>
+            <td><?php echo $funcionarioH2;?></td>
         </tr>
         <tr>
-            <td><?$clienteH3?></td>
+            <td><?php echo $clienteH3; ?></td>
             <td>11:00</td>
-            <td><?$funcionario?></td>
+            <td><?php echo $funcionarioH3;?></td>
         </tr>
         <tr>
-            <td><?$clienteH4?></td>
+            <td><?php echo $clienteH4; ?></td>
             <td>11:30</td>
-            <td><?$funcionario?></td>
+            <td><?php echo $funcionarioH4;?></td>
         </tr>
         <tr>
-            <td><?$clienteH5?></td>
+            <td><?php echo $clienteH5; ?></td>
             <td>13:30</td>
-            <td><?$funcionario?></td>
+            <td><?php echo $funcionarioH5;?></td>
         </tr>
         <tr>
-            <td><?$clienteH6?></td>
+            <td><?php echo $clienteH6; ?></td>
             <td>14:00</td>
-            <td><?$funcionario?></td>
+            <td><?php echo $funcionarioH6;?></td>
         </tr>
         <tr>
-            <td><?$clienteH7?></td>
+            <td><?php echo $clienteH7; ?></td>
             <td>14:30</td>
-            <td><?$funcionario?></td>
+            <td><?php echo $funcionarioH7;?></td>
         </tr>
         <tr>
-            <td><?$clienteH8?></td>
+            <td><?php echo $clienteH8; ?></td>
             <td>15:00</td>
-            <td><?$funcionario?></td>
+            <td><?php echo $funcionarioH8;?></td>
         </tr>
         <tr>
-            <td><?$clienteH9?></td>
+            <td><?php echo $clienteH9; ?></td>
             <td>15:30</td>
-            <td><?$funcionario?></td>
+            <td><?php echo $funcionarioH9; ?></td>
         </tr>
         <tr>
-            <td><?$clienteH10?></td>
+            <td><?php echo $clienteH10; ?></td>
             <td>16:00</td>
-            <td><?$funcionario?></td>
+            <td><?php echo $funcionarioH10;?></td>
         </tr>
         <tr>
-            <td><?$clienteH11?></td>
+            <td><?php echo $clienteH11; ?></td>
             <td>16:30</td>
-            <td><?$funcionario?></td>
+            <td><?php echo $funcionarioH11;?></td>
         </tr>
         <tr>
-            <td><?$clienteH12?></td>
+            <td><?php echo $clienteH12; ?></td>
             <td>17:00</td>
-            <td><?$funcionario?></td>
+            <td><?php echo $funcionarioH12;?></td>
         </tr>
     </table>
     <div>
