@@ -5,28 +5,13 @@
     $funcionarioID = filter_input(INPUT_POST, "funcionario", FILTER_SANITIZE_STRING);
     $myPDO =new PDO ("pgsql:host=dpg-cdugpjda499837gltqg0-a.oregon-postgres.render.com;dbname=barbearia","barbearia_user","nQnDCWxE9TVlAm0rEAlwwdQlm5ZQbAdR");
 
-    /*
-        
-    if($cliente){
-        try{
-
-            $sql_query1 ="INSERT INTO agendamentos(cliente, dia, hora, funcionario)VALUES('".$cliente."', '".$data."', '".$hora."', '".$funcionarioID."')";
-            $myPDO->query($sql_query1);
-
-        }catch(PDOException $e){
-            echo '<script type="text/javascript">toastr.error("'.$e->getMessage().'")</script>';
-        }
-    }else{
-        */
-        
-
-        $sql_query1 ="SELECT id, nome FROM usuario";
-        $funcionarios = $myPDO->query($sql_query1);
-        $rows = $funcionarios->fetchAll();
-        $options = '';
-        foreach($rows as $row) {
-            $options .= '<option value="'. $row[0] .'">'. $row[1] .'</option>';
-        }
+    $sql_query1 ="SELECT id, nome FROM usuario";
+    $funcionarios = $myPDO->query($sql_query1);
+    $rows = $funcionarios->fetchAll();
+    $options = '';
+    foreach($rows as $row) {
+        $options .= '<option value="'. $row[0] .'">'. $row[1] .'</option>';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,3 +55,16 @@
     </div>
 </body>
 </html>
+
+<?php
+
+    try{
+
+        $sql_query1 ="INSERT INTO agendamento(cliente, dia, hora, funcionario_id)VALUES('".$cliente."', '".$data."', '".$hora."', '".$funcionarioID."')";
+        $myPDO->query($sql_query1);
+
+    }catch(PDOException $e){
+        echo '<script type="text/javascript">toastr.error("'.$e->getMessage().'")</script>';
+    }   
+
+?>
