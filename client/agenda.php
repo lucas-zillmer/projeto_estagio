@@ -130,10 +130,10 @@
     <div>
         <table class="boxAgendamento" >
             <tr>
-                <td class="tdAgenda"><button class="btnAgenda"><a href="agendamento.php"><b><em>Novo Agendamento</b></em></a></button></td>
+                <td class="tdAgenda"><button class="btnAgenda"><a href="novoAgendamento.php"><b><em>Novo Agendamento</b></em></a></button></td>
             </tr>
             <tr>
-                <td class="tdAgenda"><button class="btnAgenda"><b><em>Cancelar Agendamento</b></em></button></td>
+                <td class="tdAgenda"><button class="btnAgenda"><a href="cancelarAgendamento.php"><b><em>Cancelar Agendamento</b></em></a></button></td>
             </tr>
             <tr>
                 <td class="tdAgenda"><button class="btnAgenda"><a href="home.php" style="text-decoration: underline;padding-left: 37px;padding-right: 37px;"><b><em><- Menu   </b></em></a></button></td>
