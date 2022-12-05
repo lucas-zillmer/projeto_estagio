@@ -5,46 +5,46 @@
                   where a.dia = current_date::date";
     $agendamentos = $myPDO->query($sql_query1);
     $rows = $agendamentos->fetchAll();
-    $options = '';
+   
     
     foreach ($rows as $row) {
-        $options .=  $row[2];
-        $cliente .= $row[0];
-        $funcionario .= $row[3];
-        if($options == '10:00:00'){
+        $hora =  $row[2];
+        $cliente = $row[0];
+        $funcionario = $row[3];
+        if($hora == '10:00:00'){
             $clienteH1 .= $cliente;
             $funcionarioH1 .= $funcionario;
-        }elseif($options == '10:30:00'){
+        }elseif($hora == '10:30:00'){
             $clienteH2 .= $cliente;
             $funcionarioH2 .= $funcionario;
-        }elseif($options == '11:00:00'){
+        }elseif($hora == '11:00:00'){
             $clienteH3 .= $cliente;
             $funcionarioH3 .= $funcionario;
-        }elseif($options == '11:30:00'){
+        }elseif($hora == '11:30:00'){
             $clienteH4 .= $cliente;
             $funcionarioH4 .= $funcionario;
-        }elseif($options == '13:30:00'){
+        }elseif($hora == '13:30:00'){
             $clienteH5 .= $cliente;
             $funcionarioH5 .= $funcionario;
-        }elseif($options == '14:00:00'){
+        }elseif($hora == '14:00:00'){
             $clienteH6 .= $cliente;
             $funcionarioH6 .= $funcionario;
-        }elseif($options == '14:30:00'){
+        }elseif($hora == '14:30:00'){
             $clienteH7 .= $cliente;
             $funcionarioH7 .= $funcionario;
-        }elseif($options == '15:00:00'){
+        }elseif($hora == '15:00:00'){
             $clienteH8 .= $cliente;
             $funcionarioH8 .= $funcionario;
-        }elseif($options == '15:30:00'){
+        }elseif($hora == '15:30:00'){
             $clienteH9 .= $cliente;
             $funcionarioH9 .= $funcionario;
-        }elseif($options == '16:00:00'){
+        }elseif($hora == '16:00:00'){
             $clienteH10 .= $cliente;
             $funcionarioH10 .= $funcionario;
-        }elseif($options == '16:30:00'){
+        }elseif($hora == '16:30:00'){
             $clienteH11 .= $cliente;
             $funcionarioH11 .= $funcionario;
-        }elseif($options == '17:00:00'){
+        }elseif($hora == '17:00:00'){
             $clienteH12 .= $cliente;
             $funcionarioH12 .= $funcionario;
         }
@@ -134,9 +134,6 @@
             </tr>
             <tr>
                 <td class="tdAgenda"><button class="btnAgenda"><b><em>Cancelar Agendamento</b></em></button></td>
-            </tr>
-            <tr>
-                <td class="tdAgenda"><button class="btnAgenda"><b><em>Novo Funcionário</b></em></button></td>
             </tr>
             <tr>
                 <td class="tdAgenda"><button class="btnAgenda"><a href="home.php" style="text-decoration: underline;padding-left: 37px;padding-right: 37px;"><b><em><- Menu   </b></em></a></button></td>
