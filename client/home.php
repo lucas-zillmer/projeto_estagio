@@ -14,7 +14,7 @@
             <form class="formHome">
                 <h1 class="menu">O que você precisa?</h1>
                 <button class="btnAgendamento"><a href="agenda.php" style>Agenda</a></button>
-                <button class="btnRelatorio">Relatório</button>
+                <button class="btnRelatorio"><a href="relatorio.php">Relatório</a></button>
             </form>
         </div> 
     </div>
