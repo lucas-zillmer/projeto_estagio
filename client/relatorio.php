@@ -13,36 +13,35 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="img/icon.png"/>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/relatorioStyle.css"/>
     <title>Relatório</title>
 </head>
 
-<body class="wrapperLogin">
-    <table class="boxRel">
+<div class="table-wrapper">
+    <table class="fl-table">
         <tr>    
-            <th>Atendimentos</th>
+            <th>Numero</th>
             <th>Clientes</th>
             <th>Funcionários</th>
+            <th>Data</th>
         </tr>
         <?php
         foreach ($rows as $row) {
             $id = $row[0];
             $cliente = $row[1];
             $funcionario = $row[4];
+            $data = $row [2];
             echo '<tr>
             <td> '. $id .' </td>
             <td> '. $cliente .' </td>
             <td> '. $funcionario .' </td>
+            <td> '. $data .' </td>
             </tr>';
         }
         ?>
     </table>
-    <div>
-        <table class="boxAgendamento" >
-            <tr>
-                <td class="tdAgenda"><button class="btnAgenda"><a href="home.php" style="text-decoration: underline;padding-left: 37px;padding-right: 37px;"><b><em><- Menu   </b></em></a></button></td>
-            </tr>
-        </table>
+    <div>         
+        <button style="margin-left: 41%; margin-top: 25px"><a href="home.php" style="padding-left: 37px;padding-right: 37px;"><b><em><- Menu   </b></em></a></button></td>
     </div>
 </div>
 </body>
