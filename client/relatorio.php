@@ -40,8 +40,6 @@
         }
         ?>
     </table>
-    <div>         
-        <button style="margin-left: 41%; margin-top: 25px"><a href="home.php" style="padding-left: 37px;padding-right: 37px;"><b><em><- Menu   </b></em></a></button></td>
-    </div>
+    <button style="margin-left: 41%; margin-top: 25px"><a href="home.php" style="padding-left: 37px;padding-right: 37px;"><b><em><- Menu   </b></em></a></button>
 </div>
 </body>
