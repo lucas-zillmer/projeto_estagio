@@ -28,8 +28,7 @@
 <body>
     <div class="wrapperLogin">
         <div class="boxLogin">
-            <form method="post">
-                
+            <form method="post" action="../server/cancelarAgendamentoServer.php">
                 <h1>Cancelar Agendamento</h1>
                 <div class="passwordLogin">
                     <select type="text" placeholder="Funcionário" id="agendamento" name="agendamento" required>
@@ -48,15 +47,3 @@
     </div>
 </body>
 </html>
-
-<?php
-    $agendamento = filter_input(INPUT_POST, "agendamento", FILTER_SANITIZE_STRING);
-    try{
-        $sql_query1 ="DELETE FROM agendamento a WHERE a.id = ". $agendamento;
-        $myPDO->query($sql_query1);
-
-    }catch(PDOException $e){
-        echo '<script type="text/javascript">toastr.error("'.$e->getMessage().'")</script>';
-    }   
-
-?>

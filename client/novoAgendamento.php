@@ -3,17 +3,10 @@
     if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == true)) {
         header('location:../client/login.php');
     }
-
-    $cliente = filter_input(INPUT_POST, "cliente", FILTER_SANITIZE_STRING);
-    $data = filter_input(INPUT_POST, "data", FILTER_SANITIZE_STRING);
-    $hora = filter_input(INPUT_POST, "hora", FILTER_SANITIZE_STRING);
-    $funcionarioID = filter_input(INPUT_POST, "funcionario", FILTER_SANITIZE_STRING);
     $myPDO =new PDO ("pgsql:host=dpg-cdugpjda499837gltqg0-a.oregon-postgres.render.com;dbname=barbearia","barbearia_user","nQnDCWxE9TVlAm0rEAlwwdQlm5ZQbAdR");
-
     $sql_query1 ="SELECT id, nome FROM usuario";
     $funcionarios = $myPDO->query($sql_query1);
     $rows = $funcionarios->fetchAll();
-    $options = '';
     foreach($rows as $row) {
         $options .= '<option value="'. $row[0] .'">'. $row[1] .'</option>';
     }
@@ -31,7 +24,7 @@
 <body>
     <div class="wrapperLogin">
         <div class="boxLogin">
-            <form method="post">
+            <form method="post" action="../server/novoAgendamentoServer.php">
                 
                 <h1>Agendar</h1>
                 <div class="usernameLogin">
@@ -60,16 +53,3 @@
     </div>
 </body>
 </html>
-
-<?php
-
-    try{
-
-        $sql_query1 ="INSERT INTO agendamento(cliente, dia, hora, funcionario_id)VALUES('".$cliente."', '".$data."', '".$hora."', '".$funcionarioID."')";
-        $myPDO->query($sql_query1);
-
-    }catch(PDOException $e){
-        echo '<script type="text/javascript">toastr.error("'.$e->getMessage().'")</script>';
-    }   
-
-?>
