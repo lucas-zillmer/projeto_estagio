@@ -14,8 +14,7 @@
 <body>
     <div class="wrapperLogin">
         <div class="boxLogin">
-            <form method="post">
-                
+            <form method="post" action="../server/registerServer.php">
                 <h1>Cadastrar-se</h1>
                 <div class="usernameLogin">
                     <input type="text" placeholder="Usuário" id="regUser" name="regUser" required/>
@@ -38,26 +37,8 @@
     </div>
 </body>
 </html>
-
-
 <?php
-    $user = filter_input(INPUT_POST, "regUser", FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST, "regPass", FILTER_SANITIZE_STRING);
-    $confirmation = filter_input(INPUT_POST, "passConf", FILTER_SANITIZE_STRING);
-
-    try{
-        $myPDO =new PDO ("pgsql:host=dpg-cdugpjda499837gltqg0-a.oregon-postgres.render.com;dbname=barbearia","barbearia_user","nQnDCWxE9TVlAm0rEAlwwdQlm5ZQbAdR");
-        
-        if($password != $confirmation){
-            throw new PDOException("Senhas não conferem");
-        }
-
-        $sql_query1 ="INSERT INTO usuario(nome, senha)VALUES('".$user."', '".md5($password)."')";
-        $myPDO->query($sql_query1);
-
-    }catch(PDOException $e){
-        echo '<script type="text/javascript">toastr.error("'.$e->getMessage().'")</script>';
+    if($password != $confirmation){
+        throw new PDOException("Senhas não conferem");
     }
-
-
 ?>

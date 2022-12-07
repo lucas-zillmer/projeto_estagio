@@ -1,4 +1,9 @@
 <?php
+    session_start();
+    if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == true)) {
+        header('location:../client/login.php');
+    }
+    
     $myPDO =new PDO ("pgsql:host=dpg-cdugpjda499837gltqg0-a.oregon-postgres.render.com;dbname=barbearia","barbearia_user","nQnDCWxE9TVlAm0rEAlwwdQlm5ZQbAdR");
 
     $sql_query1 ="SELECT a.id, a.cliente, a.dia, a.hora FROM agendamento a

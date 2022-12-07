@@ -1,4 +1,9 @@
 <?php
+    session_start();
+    if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == true)) {
+        header('location:../client/login.php');
+    }
+
     $cliente = filter_input(INPUT_POST, "cliente", FILTER_SANITIZE_STRING);
     $data = filter_input(INPUT_POST, "data", FILTER_SANITIZE_STRING);
     $hora = filter_input(INPUT_POST, "hora", FILTER_SANITIZE_STRING);

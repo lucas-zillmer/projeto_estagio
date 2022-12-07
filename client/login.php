@@ -10,36 +10,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
     <title>Bitz Barbearia</title>
 </head>
-<?php
-session_start();
-if (!empty($_POST)){
-    $login = $_POST['usuario'];
-    $senha = $_POST['senha'];
-    $host = "dpg-cdugpjda499837gltqg0-a.oregon-postgres.render.com";
-    $port = "5432";
-    $dbname = "barbearia";
-    $dbuser = "barbearia_user";
-    $dbpassword = "nQnDCWxE9TVlAm0rEAlwwdQlm5ZQbAdR";
-    $hashpassword = md5($senha);
-    $connection_string = "host={$host} port={$port} dbname={$dbname} user={$dbuser} password={$dbpassword}";
-    $dbconn = pg_connect($connection_string) or die ("Sem conexão com o servidor");
-    $sql = "SELECT * FROM usuario WHERE nome = '{$login}' AND senha = '{$hashpassword}'";
-    $result = pg_query($dbconn, $sql);
-    $rows = pg_fetch_row($result);
-    if($rows > 0 ){
-        $_SESSION['username'] = $login;
-        $_SESSION['password'] = $senha;
-        header('location:home.php');
-        die();
-    }else{
-        echo 'else';    
-    }
-}
-?>
 <body>
     <div class="wrapperLogin">
         <div class="boxLogin">
-            <form method="post" action="login.php">
+            <form method="post" action="../server/loginServer.php">
                 <h1>Entrar</h1>
                 <div class="usernameLogin">
                     <input type="text" placeholder="Usuário" name="usuario" id="usuario" required/>
